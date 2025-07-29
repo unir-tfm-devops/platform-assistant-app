@@ -4,9 +4,10 @@ import Button from './Button';
 interface ChatHeaderProps {
   conversationId: string;
   onNewSession: () => void;
+  onBackToHome: () => void;
 }
 
-const ChatHeader: React.FC<ChatHeaderProps> = ({ conversationId, onNewSession }) => {
+const ChatHeader: React.FC<ChatHeaderProps> = ({ conversationId, onNewSession, onBackToHome }) => {
   return (
     <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4 flex-shrink-0">
       <div className="flex items-center justify-between">
@@ -25,6 +26,14 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({ conversationId, onNewSession })
           <div className="text-blue-100 text-sm">
             <span className="font-medium">Session:</span> {conversationId}
           </div>
+          <Button
+            onClick={onBackToHome}
+            variant="secondary"
+            size="small"
+            className="text-white border-white/30 hover:bg-white/20"
+          >
+            Back to Home
+          </Button>
           <Button
             onClick={onNewSession}
             variant="secondary"

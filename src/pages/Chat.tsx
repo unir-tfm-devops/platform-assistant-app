@@ -4,7 +4,11 @@ import { Message } from '../types/chat';
 import { generateMessageId, generateConversationId } from '../utils/idUtils';
 import { callChatAPI } from '../utils/apiUtils';
 
-const Chat: React.FC = () => {
+interface ChatProps {
+  onBackToHome: () => void;
+}
+
+const Chat: React.FC<ChatProps> = ({ onBackToHome }) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
@@ -73,6 +77,7 @@ const Chat: React.FC = () => {
         <ChatHeader 
           conversationId={conversationId}
           onNewSession={startNewSession}
+          onBackToHome={onBackToHome}
         />
         
         <ChatMessages 
