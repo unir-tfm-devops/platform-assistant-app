@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './styles/App.css';
 import Chat from './pages/Chat';
 
 const App: React.FC = () => {

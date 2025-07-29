@@ -1,5 +1,11 @@
 import React from 'react';
-import { CardProps } from '../types';
+
+export interface CardProps {
+  children: React.ReactNode;
+  title?: string;
+  className?: string;
+  onClick?: () => void;
+}
 
 const Card: React.FC<CardProps> = ({
   children,

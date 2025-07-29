@@ -7,7 +7,7 @@ A modern React TypeScript application with a well-organized folder structure and
 - **TypeScript**: Full TypeScript support with strict type checking
 - **Modern Structure**: Organized folder structure for scalability
 - **Reusable Components**: Pre-built components (Button, Card)
-- **Custom Hooks**: Example localStorage hook
+- **Custom Hooks**: Reusable React hooks
 - **Utility Functions**: Common helper functions
 - **Tailwind CSS**: Modern utility-first CSS framework
 - **Responsive Design**: Mobile-first responsive layout
@@ -22,7 +22,6 @@ src/
 ├── pages/              # Page components
 │   └── Home.tsx
 ├── hooks/              # Custom React hooks
-│   └── useLocalStorage.ts
 ├── utils/              # Utility functions
 │   └── index.ts
 ├── types/              # TypeScript type definitions
@@ -66,22 +65,14 @@ A reusable card component for content containers:
 
 ## 🔧 Custom Hooks
 
-### useLocalStorage
-A hook for managing localStorage with TypeScript support:
-```tsx
-const [value, setValue] = useLocalStorage('key', initialValue);
-```
+Custom React hooks for reusable logic across components.
 
 ## 📦 Utility Functions
 
-- `formatDate()` - Format dates to readable strings
-- `capitalize()` - Capitalize first letter of strings
-- `debounce()` - Debounce function calls
-- `generateId()` - Generate random IDs
-- `isValidEmail()` - Validate email format
-- `truncateText()` - Truncate text to specified length
-- `formatNumber()` - Format numbers with commas
-- `sleep()` - Async sleep function
+### Chat Utils (`src/utils/chatUtils.ts`)
+- `generateId()` - Generate random IDs for chat messages
+- `generateConversationId()` - Generate UUID-style conversation IDs
+- `callChatAPI()` - Make API calls to the chat backend
 
 ## 🎯 Getting Started
 
